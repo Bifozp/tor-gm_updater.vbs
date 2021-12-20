@@ -28,8 +28,8 @@ Function downloadFile(url, path, size)
     End With
     If Err.Number = 0 Then
       If oXmlHttp.status <> 200 Then
+        WScript.Echo oXmlHttp.status & " " & oXmlHttp.statusText & " << " & url
         WScript.Echo "ダウンロードに失敗しました"
-        WScript.Echo "( " & oXmlHttp.statusText & ")"
         Exit Function
       End If
       Err.Clear
